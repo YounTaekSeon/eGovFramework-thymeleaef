@@ -70,19 +70,43 @@ public class SampleVO extends SampleDefaultVO {
 	/** 등록자 */
 	private String regUser;
 
-	public String getId() {
-		return contId;
-	}
+    public String getContId() {
+        return contId;
+    }
 
-	public void setId(String contId) {
-		this.contId = contId;
-	}
+    public void setContId(String contId) {
+        this.contId = contId;
+    }
 
-	public String getUseYn() {
-		return useYn;
-	}
+    public String getContTitle() {
+        return contTitle;
+    }
 
-	public void setUseYn(String useYn) {
-		this.useYn = useYn;
-	}
+    public void setContTitle(String contTitle) {
+        this.contTitle = contTitle;
+    }
+
+    public String getContCtt() {
+        return contCtt;
+    }
+
+    public void setContCtt(String contCtt) {
+        this.contCtt = contCtt;
+    }
+
+    public String getRegrEmpno() {
+        return regrEmpno;
+    }
+
+    public void setRegrEmpno(String regrEmpno) {
+        this.regrEmpno = regrEmpno;
+    }
+
+    public Date getRegDt() {
+        return regDt;
+    }
+
+    public void setRegDt(Date regDt) {
+        this.regDt = regDt;
+    }
 }
