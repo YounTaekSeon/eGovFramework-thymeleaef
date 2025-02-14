@@ -15,32 +15,20 @@
  */
 package egovframework.example.sample.web;
 
-import java.io.Console;
 import java.util.List;
-import java.util.logging.Logger;
 
 import egovframework.example.sample.service.EgovSampleService;
 import egovframework.example.sample.service.SampleDefaultVO;
 import egovframework.example.sample.service.SampleVO;
 
-import org.egovframe.rte.fdl.property.EgovPropertyService;
-import org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 import org.slf4j.LoggerFactory;
 
-import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.support.SessionStatus;
-import org.springmodules.validation.commons.DefaultBeanValidator;
 
 /**
  * @Class Name : EgovSampleController.java
@@ -74,17 +62,9 @@ public class EgovSampleController {
 	public String getSampleList(@ModelAttribute("sampleDefaultVo") SampleDefaultVO sampleVo,Model model) throws Exception {
 		List<SampleVO> sampleList = sampleService.selectSampleList(sampleVo);
 		model.addAttribute("sampleList", sampleList);
-		System.out.println(sampleList);
+		
+		log.info("Sample List: {}", sampleList);
 		
 		return "home";
 	}
-	/*
-	@GetMapping("/test.do")
-	public String test(@ModelAttribute("sampleVo") SampleVO sampleVo, Model model) throws Exception {
-		sampleVo.setId("TestId");
-		model.addAttribute("Test", sampleVo.getId());
-		
-		return "home";
-	}
-	*/
 }
